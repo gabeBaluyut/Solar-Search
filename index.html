@@ -1,7 +1,48 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Estimate</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
 <body>
-<h1> Gabriel, Ali, and Winston </h1>
-<p>Test 2</p>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="./index.html">
+            <img src="assets/brand.png" width="40" height="40">
+            Solar Estimate
+        </a>
+        <ul class="nav">
+            <a class="nav-link active" href="#"><b>Savings Estimator</b></a>
+            <a class="nav-link" href="#">More Information</a>
+            <a class="nav-link" href="#">FAQ</a>
+            <button id="login" class="ml-2 btn btn-primary">Login</button>
+        </nav>
+    </nav>
+
+    <div class="d-flex justify-content-center">
+        <div id="address-form" class="d-flex form-group mt-5">
+            <input 
+                id="address-input" 
+                type="text" 
+                placeholder="Your home address"
+                class="form-control"
+            />
+            <button 
+                id="submit" 
+                style="width: 150px;" 
+                type="button" 
+                class="btn btn-outline-primary"
+                disabled
+            >
+                Get Started
+            </button>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsQBaNVCjI-eCCFKHFlryHFX636ho_jDs&libraries=places">
+    </script>
+    <script src="scripts/index.js"></script>
 </body>
 </html>
