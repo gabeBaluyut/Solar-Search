@@ -1,10 +1,21 @@
+
 let addressInput = document.getElementById('address-input'); 
 let autocomplete = new google.maps.places.Autocomplete(addressInput); 
 let submitBtn = document.getElementById('submit'); 
 
-submitBtn.onclick = (event) => {
+document.body.onload = () => {
+    let addr = localStorage.getItem('address'); 
+    if (addr !== null) {
+        submitBtn.disabled = false; 
+        addressInput.value = addr; 
+    }
+};
+
+submitBtn.onclick = () => {
     let location = autocomplete.getPlace().geometry.location; 
-    localStorage.setItem('name', 'Zas'); 
+    localStorage.setItem('address', addressInput.value); 
+    localStorage.setItem('lat', location.lat()); 
+    localStorage.setItem('lng', location.lng()); 
     window.location = 'roof.html';
 };
 

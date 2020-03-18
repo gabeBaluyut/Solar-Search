@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Estimate</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style/map.css" />
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="./index.html">
+            <img src="assets/brand.png" width="40" height="40">
+            Solar Estimate
+        </a>
+        <ul class="nav">
+            <a class="nav-link active" href="#"><b>Savings Estimator</b></a>
+            <a class="nav-link" href="#">More Information</a>
+            <a class="nav-link" href="#">FAQ</a>
+            <button id="login" class="ml-2 btn btn-primary">Login</button>
+        </nav>
+    </nav>
+
+    <div id="parent">
+        <h3>Choose the area of your roof that you want to cover with solar panels</h3>
+        <div id="map">
+
+        </div>
+        <ul id="result" class="rounded-lg list-group list-group-flush w-50">
+            <li class="list-group-item">
+                <h3>Number of sun hours:</h3>
+            </li>
+            <li class="list-group-item">
+                <h3>Available area is squared meters: </h3>
+            </li>
+        </ul>
+    </div>
+    
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsQBaNVCjI-eCCFKHFlryHFX636ho_jDs&libraries=drawing&callback=initMap"
+        async defer>
+    </script>
+    <script src="scripts/map.js"></script>
+</body>
+</html>

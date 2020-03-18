@@ -1,10 +1,6 @@
 document.getElementById('back').onclick = () => window.location = './index.html';
 document.getElementById('next').onclick = () => window.location = './bill.html'
 
-
-
-
-
 let roofs = document.getElementsByClassName('roof'); 
 
 let selected = []; 
@@ -17,6 +13,7 @@ for (let i = 0; i < roofs.length; i++) {
             selected[j] = false; 
         }
         selected[i] = true; 
+        localStorage.setItem('roof-pitch', i);
         roofs[i].style = "border: 2px solid green; cursor: pointer;"
     });
 
