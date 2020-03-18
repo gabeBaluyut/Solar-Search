@@ -40,39 +40,10 @@
         <div id="map"></div>
     </div>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
-
-<script>
-  // Your web app's Firebase configuration
-  var firebaseConfig = {
-    apiKey: "AIzaSyCH6DVqRdYRDyx4s7TrPCSLZ-u6o84L5G8",
-    authDomain: "solar-estimate-6b93d.firebaseapp.com",
-    databaseURL: "https://solar-estimate-6b93d.firebaseio.com",
-    projectId: "solar-estimate-6b93d",
-    storageBucket: "solar-estimate-6b93d.appspot.com",
-    messagingSenderId: "435826401703",
-    appId: "1:435826401703:web:268752d1fa1301011bd682",
-    measurementId: "G-GRPESJ7EDF"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
-
-  console.log(firebase); 
-  var db = firebase.firestore();
-
-  db.collection("test").add({
-      name: "zas" 
-  }).then(() => {
-      alert('added');
-  }); 
-</script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+    <script src="scripts/firebase.js"></script>
 
     <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsQBaNVCjI-eCCFKHFlryHFX636ho_jDs&libraries=places">
