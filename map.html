@@ -21,20 +21,29 @@
     </nav>
 
     <div id="parent">
-        <h3>Choose the area of your roof that you want to cover with solar panels</h3>
         <div id="map">
 
         </div>
-        <ul id="result" class="rounded-lg list-group list-group-flush w-50">
+        <ul id="result" class="list-group list-group-flush w-50">
             <li class="list-group-item">
-                <h3>Number of sun hours:</h3>
+                <h3 id="zas">
+                    Choose the area of your roof that you want to cover with solar panels
+                </h3>
             </li>
             <li class="list-group-item">
-                <h3>Available area is squared meters: </h3>
+                <h3 id="sun-hours"></h3>
             </li>
-        </ul>
+            <li class="list-group-item">
+                <h3 id="area"></h3>
+            </li>
+			<li id="buttons" class="d-flex justify-content-between">
+				<button class="btn btn-outline-primary" id="prev">Previous</button>
+				<button class="btn btn-primary" id="next">Next</button>
+			</li>
+		</ul>
+		
     </div>
-    
+
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsQBaNVCjI-eCCFKHFlryHFX636ho_jDs&libraries=drawing&callback=initMap"
         async defer>

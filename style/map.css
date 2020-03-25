@@ -3,6 +3,17 @@
     width: 100%;
 }
 
+#buttons {
+	background-color: white;
+}
+
+#next,
+#prev {
+	margin: 10px;
+}
+
+
+
 h3 {
     text-align: center;
 }
@@ -13,6 +24,6 @@ h3 {
 
 #result {
     position: absolute;
-    top: 50px; 
+    top: 100px; 
     left: 50px; 
 }
