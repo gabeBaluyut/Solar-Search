@@ -17,7 +17,10 @@ let db = firebase.firestore();
 
 (async () => {
   let reuslt;
-  let matchedCompanies = await db.collection("companies").get();
+  let matchedCompanies = await db
+    .collection("companies")
+    .where("name", "==", name)
+    .get();
   matchedCompanies.forEach((company) => {
     result = company;
   });
@@ -37,5 +40,8 @@ let db = firebase.firestore();
         </div>
       </a>`;
     document.getElementById("requests").innerHTML += listItem;
+    document.getElementById(message.id).addEventListener("click", () => {
+      alert("work in progress");
+    });
   });
 })();

@@ -44,8 +44,8 @@ var uiConfig = {
   signInFlow: "popup",
   signInSuccessUrl: "requests.html",
   signInOptions: [firebase.auth.EmailAuthProvider.PROVIDER_ID],
-  tosUrl: "main.html",
-  privacyPolicyUrl: "main.html",
+  tosUrl: "requests.html",
+  privacyPolicyUrl: "requests.html",
   accountChooserEnabled: false,
 };
 
