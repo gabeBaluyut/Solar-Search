@@ -28,7 +28,7 @@ var uiConfig = {
           })
           .then(function () {
             console.log("New user added to firestore");
-            window.location.assign("main.html");
+            window.location.assign("requests.html");
           })
           .catch(function (error) {
             console.log("Error adding new user: " + error);
