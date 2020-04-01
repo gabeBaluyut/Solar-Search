@@ -38,11 +38,37 @@ function handleOverlayComplete(event) {
   area = Math.floor(area);
 
   document.getElementById("zas").innerHTML = "Area Selected";
-  document.getElementById("sun-hours").innerHTML = "1214 hours of sunlight";
+  document.getElementById("sun-hours").innerHTML =
+    localStorage.getItem("sunlight-hours") + " hours of sunlight";
   document.getElementById("area").innerHTML =
     area + " squared meters available for solar panels";
 
   document.getElementById("buttons").style.visibility = "visible";
+}
+
+const API_KEY = "EZoptKV6PYEMS96BDpgJH7QaTfMeRlvHD7Uf7RTq";
+const URL = "https://developer.nrel.gov/api/solar/solar_resource/v1.json?";
+
+async function fetchData(lat, lng) {
+  let path = URL + "api_key=" + API_KEY + "&lat=" + lat + "&lon=" + lng;
+
+  let data = await fetch(
+    "https://developer.nrel.gov/api/solar/solar_resource/v1.json?api_key=EZoptKV6PYEMS96BDpgJH7QaTfMeRlvHD7Uf7RTq&lat=49&lon=-123"
+  );
+  let jsonData = await data.json();
+  return jsonData;
+  // console.log(jsonData);
+}
+
+async function getYearlySolarHours() {
+  let data = await fetchData(
+    localStorage.getItem("lat"),
+    localStorage.getItem("lng")
+  );
+  let result = data.outputs.avg_dni.annual * 365;
+  localStorage.setItem("sunlight-hours", result);
+  console.log(localStorage.getItem("sunlight-hours"));
+  return result;
 }
 
 document.getElementById("prev").onclick = () =>
