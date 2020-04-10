@@ -17,16 +17,16 @@
             <span>Solar Search</span>
         </a>
         <nav class="nav">
-            <a class="nav-link active" href="#"><b>Savings Estimator</b></a>
-            <a class="nav-link" href="#">More Information</a>
-            <a class="nav-link" href="#">FAQ</a>
+            <a class="nav-link active" href="index.html"><b>Savings Estimator</b></a>
+            <a class="nav-link" href="#">Peak Sunlight</a>
+            <!-- <a class="nav-link" href="faq.html">FAQ</a> -->
             <!-- <button id="login" class="ml-5 btn btn-primary">Login</button> -->
         </nav>
     </nav>
-    <h1>Welcome! User John doe</h1>
+    <h1>Welcome!</h1>
 
-    <div style="width: 500px; height: 500px;">
-        <h3>Peak sunlight hours this week</h3>
+    <div style="width: 500px; height: 500px; position:absolute; right: 50%;">
+        <h3 style="text-align: right;">Peak sunlight hours this week</h3>
         <canvas id="myChart" width="100px" height="100px"></canvas>
     </div>
 
@@ -70,6 +70,6 @@ var myChart = new Chart(ctx, {
     }
 });
     </script>
-    <h1 id="welcome">You have saved $$ So far</h1>
+    <!-- <h1 id="welcome">You have saved $$ So far</h1> -->
 </body>
 </html>
