@@ -14,6 +14,16 @@ document.body.onload = async function () {
 
 };
 
+/**
+ * This function copies the link of the page to the clipboard. 
+ */
+document.getElementById("share").onclick = function () {
+  navigator.clipboard.writeText(window.location.href).then(() => {
+    alert("Copied the link to the clipboard, use can use this link" +
+      "to see this page again.");
+  });
+};
+
 let firebaseConfig = {
   apiKey: "AIzaSyCH6DVqRdYRDyx4s7TrPCSLZ-u6o84L5G8",
   authDomain: "solar-estimate-6b93d.firebaseapp.com",
@@ -48,10 +58,10 @@ async function getResult() {
 
   let id = url.substring(index + 1);
   let result = await checkInDatabase(id);
- 
+
   // redirect to 404.html if the id is wrong. 
   if (result.data() === undefined) {
-    window.location = '404.html'; 
+    window.location = '404.html';
   }
 
   document.getElementById("result").innerHTML += `<h1>You will
