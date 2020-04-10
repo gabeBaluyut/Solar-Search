@@ -44,39 +44,93 @@ async function getMessages() {
 }
 
 /**
+ * Creates a list item that represents a message item. This item can will be a DOM element.
+ * @param {String} name - the name of the person who sent the message.
+ * @param {String} time - time passed since the message was sent.
+ * @param {Boolean} isHandled - shows whether or not the message is handled (seen)
+ * @return {HTMLElement} - an element representing the message
+ */
+function crateListItem(name, timePassed, isHandled) {
+  let element = document.createElement("a");
+  element.setAttribute(
+    "class",
+    "list-group-item list-group-item-action flex-column align-items-start"
+  );
+
+  // the container the hold the information.
+  let container = document.createElement("div");
+  container.setAttribute("class", "d-flex w-100 justify-content-between");
+
+  // element showing the name.
+  let nameElement = document.createElement("h5");
+  nameElement.setAttribute("class", "m-1");
+  nameElement.innerHTML = name;
+
+  // element showing the time passed since the message was sent.
+  let dateElement = document.createElement("small");
+  dateElement.setAttribute("class", "text-muted");
+  dateElement.innerHTML = timePassed + " ago";
+
+  container.append(nameElement, dateElement);
+  element.appendChild(container);
+
+  if (isHandled) {
+    element.classList.add("list-group-item-success");
+  } else {
+    element.classList.add("list-group-item-warning");
+  }
+
+  return element;
+}
+
+/**
+ * Adds a click event listener to the item with the given id.
+ *
+ * @param {String} itemId - the id of the element
+ */
+function addClickHandler(itemId) {
+  let item = document.getElementById(itemId);
+
+  item.addEventListener("click", () => {
+    $("#exampleModal").on("shown.bs.modal", function () {
+      $("#button-modal").trigger("focus");
+    });
+
+    $(document).ready(function () {
+      $(".modal").modal("show");
+    });
+
+    $("#exampleModal").modal("show");
+  });
+}
+
+/**
  * Gets messages and adds them to the DOM.
  *
- * @param {Array} the messages
+ * @param {Array} the list of messages
  */
 function addMessagesToDom(messages) {
   // add the to the DOM
   messages.forEach((message) => {
-    let element = document.createElement("a");
-    element.setAttribute("class", 
-      "list-group-item list-group-item-action flex-column align-items-start");
+    // name of the person who sent the message.
+    let name = message.data().name;
 
-    let container = document.createElement("div");
-    container.setAttribute("class", "d-flex w-100 justify-content-between");
+    // time passed since the message was sent.
+    let timePassed = timeEllapsedSince(message.data().date.seconds);
 
-    let nameElement = document.createElement("h5");
-    nameElement.setAttribute("class", "m-1");
-    nameElement.innerHTML = message.data().name;
+    // is the message seen
+    let isHandled = message.data().seen;
 
-    let dateElement = document.createElement("small");
-    dateElement.setAttribute("class", "text-muted");
-    dateElement.innerHTML =
-      timeEllapsedSince(message.data().date.seconds) + " ago";
+    let element = crateListItem(name, timePassed, isHandled);
+    element.setAttribute("id", message.id);
 
-    container.append(nameElement, dateElement);
-    element.appendChild(container);
-
-    if (message.data().seen) {
-			element.classList.add("list-group-item-success"); 
+    if (isHandled) {
       document.getElementById("handled-requests").appendChild(element);
     } else {
-			element.classList.add("list-group-item-warning"); 
       document.getElementById("unhandled-requests").appendChild(element);
     }
+
+    addClickHandler(message.id);
   });
 }
 
