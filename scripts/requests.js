@@ -25,7 +25,7 @@ let db = firebase.firestore();
  * Retrives the messages of the company that is logged in from the database
  * and returns them.
  *
- * @return {Array} messages of the company that is logged in.
+ * @return {Promise<Array>} messages of the company that is logged in.
  */
 async function getMessages() {
   // get the company's data from the database

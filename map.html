@@ -1,11 +1,14 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solar Estimate</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style/map.css" />
 </head>
+
 <body>
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="./index.html">
@@ -17,7 +20,7 @@
             <a class="nav-link" href="#">Peak Sunlight</a>
             <!-- <a class="nav-link" href="#">FAQ</a> -->
             <button id="login" class="ml-2 btn btn-primary">Login</button>
-        </nav>
+    </nav>
     </nav>
 
     <div id="parent">
@@ -37,18 +40,21 @@
             <li class="list-group-item">
                 <h3 id="area"></h3>
             </li>
-			<li id="buttons" class="d-flex justify-content-between">
-				<button class="btn btn-outline-primary" id="prev">Previous</button>
-				<button class="btn btn-primary" id="next">Next</button>
-			</li>
-		</ul>
-		
+            <li id="buttons" class="d-flex justify-content-between">
+                <button class="btn btn-outline-primary" id="prev">Previous</button>
+                <button class="btn btn-primary" id="next">Next</button>
+            </li>
+        </ul>
     </div>
 
-    <script
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+
+    <script src="scripts/map.js"></script>
+     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsQBaNVCjI-eCCFKHFlryHFX636ho_jDs&libraries=drawing&callback=initMap"
         async defer>
     </script>
-    <script src="scripts/map.js"></script>
 </body>
+
 </html>

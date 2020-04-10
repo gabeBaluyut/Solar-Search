@@ -1,4 +1,4 @@
-var firebaseConfig = {
+let firebaseConfig = {
   apiKey: "AIzaSyCH6DVqRdYRDyx4s7TrPCSLZ-u6o84L5G8",
   authDomain: "solar-estimate-6b93d.firebaseapp.com",
   databaseURL: "https://solar-estimate-6b93d.firebaseio.com",
@@ -13,6 +13,16 @@ firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
 var db = firebase.firestore();
+
+/**
+ * Retrieves the collectino of companies the the database and returns 
+ * them as a promise. 
+ *  
+ * @param {Promise<Object|null>} name 
+ */
+async function getCompanies(name) {
+  return await db.collection("companies").get();
+}
 
 (async () => {
   let companies = await db.collection("companies").get();

@@ -2,6 +2,8 @@ let addressInput = document.getElementById("address-input");
 let autocomplete = new google.maps.places.Autocomplete(addressInput);
 let submitBtn = document.getElementById("submit");
 
+console.log(window.location.href);
+
 document.body.onload = () => {
   let addr = localStorage.getItem("address");
   if (addr !== null) {

@@ -36,6 +36,7 @@ var uiConfig = {
       } else {
         localStorage.setItem("isLoggedIn", true);
         localStorage.setItem("name", user.displayName);
+        localStorage.setItem("company-id");
         return true;
       }
       return false;
