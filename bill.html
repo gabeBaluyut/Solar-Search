@@ -6,6 +6,7 @@
     <title>Solar Estimate</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/steps.css"; 
 </head>
 
 <body>
@@ -21,13 +22,26 @@
             <button id="login" class="ml-2 btn btn-primary">Login</button>
     </nav>
     </nav>
+
+    <div class="d-flex flex-column">
+        <div class="steps-container">
+          <ul class="progressbar">
+            <li class="step">Address</li>
+            <li class="step">Roof Pitch</li>
+            <li class="step active">Monthly Bill</li>
+            <li class="step">Roof Size</li>
+            <li class="step">Done!</li>
+          </ul>
+        </div>
+      </div>
+
     <div style="text-align: center;" class="d-flex flex-column mt-3">
         <div class="d-flex justify-content-center">
             <h3>What was your last monthly electricity bill?</h3>
         </div>
         <h5 id="bill" class="mt-5">$50</h5>
         <div class="d-flex justify-content-center mt-5">
-            <input id="bill-input" type="range" class="custom-range w-50" /> 
+            <input max="200" id="bill-input" type="range" class="custom-range w-50" /> 
         </div>
     </div>
 

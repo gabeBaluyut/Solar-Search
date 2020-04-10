@@ -1,11 +1,12 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solar Estimate</title> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<body>
+    <title>Solar Estimate</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/steps.css" ; </head> <body>
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="./index.html">
             <img src="assets/brand.png" width="40" height="40">
@@ -16,8 +17,20 @@
             <a class="nav-link" href="#">Peak Sunlight</a>
             <!-- <a class="nav-link" href="#">FAQ</a> -->
             <button id="login" class="ml-2 btn btn-primary">Login</button>
-        </nav>
     </nav>
+    </nav>
+
+    <div class="d-flex flex-column">
+        <div class="steps-container">
+            <ul class="progressbar">
+                <li class="step">Address</li>
+                <li class="step active">Roof Pitch</li>
+                <li class="step">Monthly Bill</li>
+                <li class="step">Roof Size</li>
+                <li class="step">Done!</li>
+            </ul>
+        </div>
+    </div>
 
     <div class="d-flex flex-column justify-content-center">
         <h3 class="mt-3" style="text-align: center;">Select Your Roof Pitch</h3>
@@ -42,5 +55,6 @@
     </div>
 
     <script src="scripts/roof.js"></script>
-</body>
+    </body>
+
 </html>

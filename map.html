@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style/map.css" />
+    <link rel="stylesheet" type="text/css" href="style/steps.css" />
 </head>
 
 <body>
@@ -22,6 +23,16 @@
             <button id="login" class="ml-2 btn btn-primary">Login</button>
     </nav>
     </nav>
+
+    <div class="steps-container">
+        <ul class="progressbar">
+            <li class="step">Address</li>
+            <li class="step">Roof Pitch</li>
+            <li class="step">Monthly Bill</li>
+            <li class="active step">Roof Size</li>
+            <li class="step">Done!</li>
+        </ul>
+    </div>
 
     <div id="parent">
         <div id="map">
@@ -51,7 +62,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
 
     <script src="scripts/map.js"></script>
-     <script
+    <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsQBaNVCjI-eCCFKHFlryHFX636ho_jDs&libraries=drawing&callback=initMap"
         async defer>
     </script>
