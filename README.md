@@ -10,9 +10,11 @@ Projects 1
   * Bootstrap 
 
 ## Content 
+```
 It has the following subfolders: 
 ├── .firebase       # Folder for firebase 
 ├── .git            # Folder for Git repo 
 ├── assets          # Folder for Images 
 ├── scripts         # Folder for scripts
 ├── style           # Folder for CSS files
+```
