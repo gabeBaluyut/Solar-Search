@@ -44,6 +44,7 @@ function handleOverlayComplete(event) {
     area + " squared meters available for solar panels";
 
   document.getElementById("buttons").style.visibility = "visible";
+  document.getElementById("mapa").style.display = "none";
 }
 
 const API_KEY = "EZoptKV6PYEMS96BDpgJH7QaTfMeRlvHD7Uf7RTq";
